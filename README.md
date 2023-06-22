@@ -8,3 +8,7 @@ Important
 Don’t forget to install SDL2 [SDL2 tutorials](https://intranet.alxswe.com/rltoken/oona0Kd1yVyjHQGoJaV_aw)
 There are no forbidden functions for this project. You are allowed to use any system call and/or standard library function.
 You are allowed to use [all the functions provided by SDL2](https://intranet.alxswe.com/rltoken/bmGynXNHzUObCE08XuoCQg)
+In this game; i used the following functions:
+The handleEvents() function includes event handling for the left and right arrow keys to rotate the camera.
+
+In the renderScene() function, i added the necessary SDL functions to apply camera rotation. I used SDL_RenderSetRotation() to set the rotation angle of the renderer, and SDL_RenderSetScale() and SDL_RenderSetViewport() to adjust the rendering scale and viewport to maintain the aspect ratio.
