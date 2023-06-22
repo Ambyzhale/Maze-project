@@ -12,7 +12,10 @@
 
 #define MAP_WIDTH 8
 #define MAP_HEIGHT 8
-
-/*declearing an arry or characters to represent my map elements ie; walls,ground and ceiling*/
-
- int map[MAP_WIDTH][MAP_HEIGHT] = {                                                                                              {1, 1, 1, 1, 1, 1, 1, 1},                                                                                               {1, 0, 0, 0, 0, 0, 0, 1},                                                                                               {1, 0, 1, 1, 0, 1, 0, 1},                                                                                               {1, 0, 1, 0, 0, 1, 0, 1},                                                                                               {1, 0, 1, 0, 1, 0, 0, 1},                                                                                               {1, 0, 0, 0, 0, 0, 0, 1},                                                                                               {1, 1, 1, 1, 1, 1, 1, 1},                                                                                       };                                                                                                                      double playerX = 3.5;                                                                                                   double playerY = 4.5;                                                                                                   double playerAngle = 0.0;  
+SDL_Window *createWindow(const char *title, int width, int height);
+extern int map[MAP_WIDTH][MAP_HEIGHT];
+void drawMap(void);
+void handleEvents(void);
+void inputHandler(void);
+void renderScene(SDL_Renderer *renderer);
+#endif
