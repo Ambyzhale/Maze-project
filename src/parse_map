@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+#define MAP_WIDTH 8
+#define MAP_HEIGHT 8
+
+void parseMapFromFile(const char* filePath, int map[MAP_HEIGHT][MAP_WIDTH])
+{
+    FILE* file = fopen(filePath, "r");
+    if (file == NULL)
+    {
+        printf("Failed to open the map file.\n");
+        return;
+    }
+
+    char line[MAP_WIDTH + 2];  // Add 2 for '\n' and '\0'
+    int row = 0;
+
+    while (fgets(line, sizeof(line), file) && row < MAP_HEIGHT)
+    {
+        if (line[MAP_WIDTH] != '\n')
+        {
+            printf("Invalid map file format. Line %d is not of the expected width.\n", row + 1);
+            fclose(file);
+            return;
+        }
+
+        for (int col = 0; col < MAP_WIDTH; col++)
+        {
+            if (line[col] == '1')
+                map[row][col] = 1;  // Wall
+            else if (line[col] == '0')
+                map[row][col] = 0;  // Empty space
+            else
+            {
+                printf("Invalid map file format. Line %d contains an unknown character.\n", row + 1);
+                fclose(file);
+                return;
+            }
+        }
+
+        row++;
+    }
+
+    if (row < MAP_HEIGHT)
+    {
+        printf("Invalid map file format. Map file does not contain enough rows.\n");
+        fclose(file);
+        return;
+    }
+
+    fclose(file);
+}
