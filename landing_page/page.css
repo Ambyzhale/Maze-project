@@ -2,6 +2,10 @@
 body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
+  background-image: url(/Maze-project/images/rounded.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 body {
@@ -19,10 +23,13 @@ header {
   background-color: #333;
   color: #fff;
   padding: 10px;
+
 }
 
 nav ul {
   list-style-type: none;
+  border-radius: 30px; 
+  padding: 20px;
 }
 
 nav ul li {
@@ -33,6 +40,8 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
+  align-content: center;
+
 }
 
 #hero {
@@ -42,6 +51,22 @@ nav ul li a {
   color: #fff;
   text-align: center;
   padding: 200px 0;
+}
+
+button {
+  border: none;
+  border-radius: 25px;
+  padding: 15px;
+  font-size: 20px;
+  background-color: rgb(111, 62, 10);
+  text-decoration: none;
+  color: black;
+}
+button:hover {
+  color: #712626;
+}
+#play-button {
+  text-decoration: none;
 }
 
 h1 {
@@ -57,13 +82,12 @@ p {
 .button {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #333;
-  color: #fff;
+  background-color: rgb(111, 62, 10);
   text-decoration: none;
   font-size: 18px;
 }
 
 .button:hover {
-  background-color: #555;
+  background-color: #712626;
 }
 
